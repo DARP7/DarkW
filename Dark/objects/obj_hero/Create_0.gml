@@ -1,4 +1,6 @@
 /// @description Creacion de variables y estados
+animation_speed = image_speed;
+my_initial_depth = depth;
 left = 0;
 right = 0;
 up = 0;

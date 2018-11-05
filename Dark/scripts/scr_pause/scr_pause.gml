@@ -1,0 +1,1 @@
+global.is_paused = true;

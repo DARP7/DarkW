@@ -1,7 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
-depth = - y;
 if(!global.is_paused){
+	depth = - y;
+	image_speed = animation_speed;
 	scr_getting_input();
 	scr_getting_state();
 	scr_changing_sprite();
@@ -39,4 +40,7 @@ if(!global.is_paused){
 			}
 		}
 	}
+}else{
+	depth = 0;
+	image_speed = 0;
 }
