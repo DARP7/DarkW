@@ -19,3 +19,4 @@ text_array [0] = "";
 parent = noone;
 
 my_menu = noone;
+

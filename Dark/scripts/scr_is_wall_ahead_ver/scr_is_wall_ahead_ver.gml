@@ -3,7 +3,7 @@
 
 //bbox_left
 var yy = argument0;
-show_debug_message(yy);
+//show_debug_message(yy);
 if(yy < 0){
 	if(place_meeting(x, y + yy, obj_wall)){
 		//show_debug_message("choque izquierda");
