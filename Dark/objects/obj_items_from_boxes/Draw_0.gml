@@ -21,9 +21,17 @@ if(parent != noone){
 			}
 			
 		}
-		draw_text(x + 350, y + 470, "Descripción:")
+		//Draw preview image
+		if(item[item_selected].sprite != noone){
+			var spr = asset_get_index(item[item_selected].sprite);
+			draw_sprite_ext(spr, 0, (x + 660) - round((sprite_get_width(spr) / 2)), y + 180, 4, 4, 0, c_white, 1);
+		}
+		//fin draw preview image
+		script_execute(scr_item_show_stats);
+		
+		draw_text(x + 350, y + 470, "Descripción:");
 		var description_lenght = string_width(item[item_selected].description);
-		show_debug_message(description_lenght);
+		//show_debug_message(description_lenght);
 		if(description_lenght > 480){
 			
 			draw_text_ext(x + 350, y + 502, item[item_selected].description, 22, 450);

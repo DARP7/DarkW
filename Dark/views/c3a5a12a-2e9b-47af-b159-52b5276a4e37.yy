@@ -8,7 +8,9 @@
         "ebb91489-d2cd-4977-a3df-b897e34a3675",
         "bce47392-a565-4af2-a07d-f17802b540e6",
         "51b1024c-6beb-4902-80cc-7de831893e8b",
-        "2770b0e3-e054-4644-ac1a-7cf8c0e7da8a"
+        "2770b0e3-e054-4644-ac1a-7cf8c0e7da8a",
+        "b1854d93-8ea1-4adb-b1f0-462b2e626939",
+        "b3d8c80b-f844-40b9-a500-80bf78fac150"
     ],
     "filterType": "GMScript",
     "folderName": "Hero_Scripts",
