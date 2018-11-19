@@ -2,6 +2,9 @@
 // You can write your code in this editor
 down = keyboard_check_pressed(ord("S"));
 up = -keyboard_check_pressed(ord("W"));
+quit = keyboard_check_pressed(ord("Q"));
+recoger = keyboard_check_pressed(ord("R"));
+todo = keyboard_check_pressed(ord("T"));
 
 selection = down + up;
 if(parent != noone){
@@ -24,4 +27,23 @@ if(parent != noone){
 			texto = "";
 		}
 	}
+	if(start_drawing){
+		if(quit){
+			if(!instance_exists(obj_selected_menu_boxes_commands)){
+				instance_create_layer(x + 70, y + 632, "Menus", obj_selected_menu_boxes_commands);
+				script_execute(scr_menu_boxes_quit);
+			}
+		}
+		if(recoger){
+			if(!instance_exists(obj_selected_menu_boxes_commands)){
+				instance_create_layer(x + 166, y + 632, "Menus", obj_selected_menu_boxes_commands);
+			}
+		}
+		if(todo){
+			if(!instance_exists(obj_selected_menu_boxes_commands)){
+				instance_create_layer(x + 263, y + 632, "Menus", obj_selected_menu_boxes_commands);
+			}
+		}
+	}
+	
 }

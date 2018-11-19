@@ -2,6 +2,7 @@
 // You can write your code in this editor
 draw_set_font(fnt_menus);
 draw_set_color(c_white);
+draw_set_halign(fa_left);
 if(parent != noone){
 	if(instance_exists(parent)){
 		draw_sprite(spr_menu_boxes, 0, x, y);
@@ -21,13 +22,18 @@ if(parent != noone){
 			}
 			
 		}
+		
 		//Draw preview image
 		if(item[item_selected].sprite != noone){
 			var spr = asset_get_index(item[item_selected].sprite);
-			draw_sprite_ext(spr, 0, (x + 660) - round((sprite_get_width(spr) / 2)), y + 180, 4, 4, 0, c_white, 1);
+			if(item[item_selected].armor_body_part != "legs" and item[item_selected].armor_body_part != "boots"){
+				draw_sprite_ext(spr, 0, (x + 660) - round((sprite_get_width(spr) / 2)), y + 180, 4, 4, 0, c_white, 1);
+			}else{
+				draw_sprite_ext(spr, 0, (x + 660) - round((sprite_get_width(spr) / 2)), y + 120, 4, 4, 0, c_white, 1);
+			}
 		}
 		//fin draw preview image
-		script_execute(scr_item_show_stats);
+		script_execute(scr_item_show_stats);//if item is armor
 		
 		draw_text(x + 350, y + 470, "Descripción:");
 		var description_lenght = string_width(item[item_selected].description);
@@ -40,5 +46,16 @@ if(parent != noone){
 		}
 		objects_created = true;
 		draw_sprite(spr_selected_arrow, 0, x + 36, (y + 32 + 10) + (item_selected * 32));
+		
+		
+		//show commands
+		
+		draw_sprite(spr_menu_boxes_commands, 0, x + 22, y + 624);
+		draw_set_halign(fa_center);
+		draw_set_font(fnt_menus_commands);
+		draw_text(x + 70, y + 624, "Q = Salir");
+		draw_text(x + 166, y + 624, "R = Recoger");
+		draw_text(x + 263, y + 624, "T = Todo");
+		
 	}
 }

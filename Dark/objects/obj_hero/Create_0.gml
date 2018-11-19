@@ -8,6 +8,9 @@ down = 0;
 state = "idle";
 dir = "down";
 
+hero_bag = instance_create_layer(-100, 0, "Instances", obj_hero_bag);
+hero_bag.parent = id;
+
 armor_chest = noone;
 armor_arms = noone;
 armor_legs = noone;
